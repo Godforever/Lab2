@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>  
+	<package name="first" namespace="/" extends="struts-default">
+	
+		<action name="findbook" class="action.BookAction">
+			<result name="list">/showbook.jsp</result>
+		</action>
+		
+		<action name="findauthor" method="judgeAuthor"  class="action.BookAction">
+			<result name="notexit">/addauthor.jsp</result>
+			<result name="exit">/addbook.jsp</result>
+		</action>
+		
+		<action name="detail" method="showDetails" class="action.BookAction" >
+			<result name="success">/showdetail.jsp</result>
+		</action>
+		
+		<action name="allbook" method="showAll" class="action.BookAction" >
+			<result name="allsuccess">/showdetail.jsp</result>
+		</action>
+		
+		<action name="deleteone" method="delete" class="action.BookAction" >
+			<result name="deleteok">/delete.jsp</result>
+		</action>
+		
+		<action name="updateone" method="update" class="action.BookAction">
+			<result name="updateok">/success.jsp</result>
+		</action>
+		<action name="addoneauthor" method="addAuthor" class="action.BookAction">
+			<result name="addauthorok">/success.jsp</result>
+		</action>
+		<action name="addonebook" method="addBook" class="action.BookAction">
+			<result name="addbookok">/success.jsp</result>
+		</action>
+		
+	</package>
+</struts>    
